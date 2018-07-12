@@ -1,0 +1,13 @@
+\babel@toc {french}{}
+\beamer@sectionintoc {1}{Correction de l'effet ann\IeC {\'e}e bissextile}{5}{0}{1}
+\beamer@subsectionintoc {1}{1}{Quand et comment corriger l'effet ann\IeC {\'e}e bissextile ?}{6}{0}{1}
+\beamer@subsectionintoc {1}{2}{M\IeC {\'e}thodologie de l'\IeC {\'e}tude}{13}{0}{1}
+\beamer@subsectionintoc {1}{3}{Exemples}{15}{0}{1}
+\beamer@subsectionintoc {1}{4}{R\IeC {\'e}sultats des simulations}{17}{0}{1}
+\beamer@sectionintoc {2}{Correction des ruptures}{20}{0}{2}
+\beamer@subsectionintoc {2}{1}{Les diff\IeC {\'e}rentes ruptures \IeC {\'e}tudi\IeC {\'e}es}{21}{0}{2}
+\beamer@subsectionintoc {2}{2}{M\IeC {\'e}thodologie de l'\IeC {\'e}tude}{22}{0}{2}
+\beamer@subsectionintoc {2}{3}{Exemple}{23}{0}{2}
+\beamer@subsectionintoc {2}{4}{R\IeC {\'e}sultats des simulations}{24}{0}{2}
+\beamer@sectionintoc {3}{Identification du mod\IeC {\`e}le ARIMA}{26}{0}{3}
+\beamer@sectionintoc {4}{Conclusion et recommandations}{29}{0}{4}
