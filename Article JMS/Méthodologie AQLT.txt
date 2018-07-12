@@ -1,0 +1,75 @@
+Pour les outliers sur l'IPI j'ai procédé de cette façon : 
+
+- Pour chaque série j'ai estimé un modèle sur 16 ans avec un modèle ARIMA libre, une détection automatique d'outliers et des effets JO de JD+ "WorkingDays" (en laissant JD+ le choix 
+de corriger ou non) ;
+
+- sur la série brute j'ai généré un outlier 5 ans après le début de la série (ici 1995-01) dont le niveau était de 10 pour les modèles additifs. Pour le modèle multiplicatif j'ai passé 
+la série brute en log et j'ai rajouté un outlier dont le niveau était de log(2) (environ 0,7).
+
+- sur chaque date à partir de janvier 1995 j'ai ré-estimé le modèle estimé sur 16 ans en rajoutant l'outlier ainsi créé (les paramètres ne sont pas identifiés à nouveau : je garde les 
+mêmes outliers, le même schéma le même modèle ARIMA, etc.). Dans le dossier "IPI estimations fixes" les estimations de tous les paramètres du modèle estimés sur 16 ans sont fixés (valeurs des autres outliers, coefficients modèle ARIMA, etc.) alors que dans le dossier "IPI estimations libres" je laisse le modèle tout estimer.
+
+Il y a plusieurs fichiers pdf avec des boîtes à moustaches : 
+
+- "Relative_difference" correspond aux différences relatives par rapport à la dernière valeur estimée. Le fichier "Relative_difference_borne" c'est le même graphique mais en supprimant 
+les séries pour lesquelles ces différences étaient supérieures à 100 % (pour une meilleure analyse graphique).
+
+- Les fichiers Difference_niveau correspondent aux différences en niveau avec : la dernière valeur estimée pour "Difference_niveau_der_date" et la valeur attendue pour 
+"Difference_niveau_rupture". Pour les séries multiplicatives j'ai pris l'exponentiel des différences. Dans le cadre du SO, comme je ne savais pas quelle était la valeur "attendue" 
+il s'agit du même graphique dans les deux fichiers.
+
+Pour rappel ce sont des boxplots personnalisés : les côtés des boîtes représentent le premier et le dernier décile et les traits correspondent aux quantiles à 5 % et 95 %.
+
+********************************************************************** 
+
+J'ai remis le .TeX de l'article où les tableaux et graphiques sont actualisées en utilisant uniquement des données européennes. Il s'agit des bases sts_intv_m (ICA dans l'industrie), 
+sts_setu_m (ICA dans les services), sts_sepr_m (ICA dans le commerce de gros et de détail) et sts_inpr_m (IPI). Ce sont des indices en volume et j'ai utilisé les niveaux NACE4, NACE3 et 
+NACE2 (lorsqu'ils étaient disponibles).
+
+Sur les outliers j'ai utilisé l'IPI français au niveau NACE4 : lundi je pourrai te donner les résultats avec l'IPI européen.
+
+
+Re-bonjour Dominique,
+
+Comme promis ce matin je t'envoie quelques graphiques sur les séries pour lesquelles l'effet LY était significatif et positif (seules 4 séries avaient un effet significatif et négatif) 
+dans les données de l'IPI et ICA-TVA au niveau élémentaire (je n'ai pas regardé au niveau agrégé). Il y a 50 séries dans ce cas dans l'IPI et 214 séries ICA-TVA (qui commencent en 1999). 
+Il y a deux types de graphiques : des histogrammes et des diagrammes en violon. Les diagrammes en violon ressemblent beaucoup aux boîtes à moustaches mais avec une information 
+supplémentaire : ils permettent de visualiser la densité de l'échantillon en même temps que quelques quantiles (ici j'ai tracé les quartiles : ce sont les trois traits horizontaux).
+
+Pour rappel je considère qu'une série a convergé lorsqu'il existe une date à partir de laquelle toutes les estimations futures sont significativement non nulles et non significativement 
+différentes de la dernière estimation (je suppose donc que si l'estimation est significative à la dernière date connue alors elle a convergé). Les tests sont effectués au seuil de 5 %.
+
+Première chose que l'on peut noter : sur les 50 séries de l'IPI, 22 ont un effet LY qui met plus de 20 ans à converger. Pour un peu plus de la moitié de ces séries cela vient du fait 
+que le coefficient LY reste significatif assez tardivement. Pour les autres, à la fois le coefficient LY reste significatif assez tardivement et la dernière estimation du coefficient 
+est éloignée des estimations en début de période. Je me demandais si ce n'était pas signe que mon critère de convergence était trop strict ou que les modèles pouvaient devenir instables 
+sur longue période (et donc je devrais plutôt les estimer sur une période plus courte). Qu'en penses-tu ? Sur les séries ICA-TVA (qui commencent en 1999), une cinquantaine d'entre elles 
+mettent entre 17 et 19 ans à converger : même interprétation ?
+
+Sinon 25 % des séries mettent moins de 10 ans à converger et 50 % moins de 13 ans.
+
+Concernant la valeur de convergence j'ai pour l'instant encore distingué additif (44 séries) et multiplicatif (220 séries). Dans les modèles multiplicatifs il n'y a que 10 séries pour 
+lesquelles le coefficient LY converge vers une valeur significativement différente de celle attendue (0,035) : c'est rassurant. Plus de 75 % des séries convergent vers une valeur comprise
+entre 0,02 et 0,06. C'est plus dispersé dans les modèles additifs mais on a moins d'observations.
+ 
+Je suis disponible quand tu veux pour en discuter.
+ 
+Alain
+
+********************************
+
+Bonjour Dominique,
+ 
+Même si tu as dit qu'on regarderait plus tard sur une plus grande base de données j'ai quand même un peu regardé les résultats sur la base de données de l'IPI téléchargée sur Eurostat 
+(séries de code sts_inpr_m téléchargées ici http://ec.europa.eu/eurostat/data/database) en NACE4, NACE3 et NACE2. J'ai épuré la base de manière très simpliste : j'ai considéré comme 
+manquante toute donnée qui avait une "annotation" (ie. : toute donnée provisoire, estimée, non significative selon Eurostat, etc.) et je n'ai gardé que les séries pour lesquelles j'avais 
+au moins 12 années d'observations. Cela permet d'avoir bien plus d'observations pour les modèles additifs (207 contre 44 précédemment) et deux fois plus de modèles multiplicatifs 
+(417 contre 220 précédemment).
+En PJ le même cahier de graphiques d'hier mais avec les nouvelles séries.
+Les observations d'hier restent valables : 25 % des séries mettent plus de 19 ans à converger et dans les modèles additifs la convergence semble plus lente.
+La distribution de l'estimation du coefficient du régresseur LY des modèles additifs est très proche de celle des modèles multiplicatifs multipliée par 100 : je pense que ça vient 
+de ce que tu disais (le niveau des indices est "autour de 100").
+ 
+Bonne fin de journée,
+ 
+Alain
+
