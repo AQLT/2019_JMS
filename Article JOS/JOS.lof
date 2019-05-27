@@ -1,0 +1,13 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces The seasonal adjustment process of \textsc {X-13Arima-Seats} and \textsc {Tramo-Seats}: correction and decomposition.}}{1}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Regressors associated with some kind of breaks (AO, LS, TC, SO).}}{5}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Automatic modeling of the IPI of the French manufacturing industry}}{7}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Successive estimates of the leap year coefficient for the series RF0610 (extraction of crude petroleum)}}{10}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Successive estimates of the leap year coefficient for the series RF139 (manufacture of knitted and crocheted fabrics)}}{10}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Time convergence (in years) of the leap year coefficient (study on 624 series)}}{11}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Final estimate of the leap year effect (study on 624 series)}}{12}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Change of the percentage of series for which the manual leap year pre-adjustment is better (in terms of $AICC$) than the Reg-ARIMA pre-adjustment (study on 2198 series)}}{13}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Raw series and change of the estimate of the additive outlier AO1996.jan for the series DE-C1062 (additive model)}}{15}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Raw series and change of the estimate of the additive outlier AO1996.jan for the series DE-C1086 (multiplicative model)}}{16}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Time convergence (in months) of the coefficient of the break by the decomposition model}}{17}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Final estimate of the coefficient of the coefficient of the break by the decomposition model}}{18}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Comparison of the models obtained for the RF241 according to whether the leap year regressor is used or not as an external regressor}}{21}{figure.13}
